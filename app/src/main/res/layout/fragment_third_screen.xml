@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.ThirdScreen">
+
+    <TextView
+        android:id="@+id/skipText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textStyle="bold"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="150dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#919090"/>
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/onboard3"
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stay Inform
+                      Any where Any
+                      Time"
+        android:layout_marginTop="400dp"
+        android:padding="40dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read, Listen, Translate connect with world your way "
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:padding="40dp"
+        android:layout_marginTop="520dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnNext3"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        app:cornerRadius="16dp"
+        android:layout_marginTop="720dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#D61C1C"
+        android:text="Getting Started"
+        android:textSize="16sp"/>
+
+</FrameLayout>
