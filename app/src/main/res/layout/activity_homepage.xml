@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Homepage">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/listicon"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/searchicon"
+            android:layout_marginLeft="130dp"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/notoficationicon"/>
+
+    </LinearLayout>
+
+    <!-- Toolbar -->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:theme="?attr/actionBarTheme"-->
+<!--        app:title="News App"-->
+<!--        app:titleTextColor="@android:color/white"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!-- Breaking News -->
+    <TextView
+        android:id="@+id/tvBreakingNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breaking News"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#D61C1C"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvViewAllBreakingNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="view all"
+        android:textColor="#3A3468"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvBreakingNews" />
+
+    <!-- Horizontal RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerBreakingNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvBreakingNews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:overScrollMode="never"
+        android:scrollbars="horizontal"/>
+
+    <!-- Today News -->
+    <TextView
+        android:id="@+id/tvTodayNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today News"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#3A3468"
+        app:layout_constraintTop_toBottomOf="@id/recyclerBreakingNews"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Vertical RecyclerView -->
+
+    <TextView
+        android:id="@+id/tvViewAllTodayNews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="view all"
+        android:textColor="#3A3468"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTodayNews" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTodayNews"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTodayNews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="vertical"/>
+
+
+    <!-- Bottom Navigation -->
+    <include layout="@layout/custom_bottum_nav"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

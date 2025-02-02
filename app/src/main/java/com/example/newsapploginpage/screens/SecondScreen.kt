@@ -1,5 +1,6 @@
 package com.example.newsapploginpage.screens
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.newsapploginpage.LoginPage
 import com.example.newsapploginpage.R
 
 
@@ -25,6 +27,12 @@ class SecondScreen : Fragment() {
 
         next.setOnClickListener {
             viewPager?.currentItem = 2
+        }
+
+        val skipTextView: TextView = view.findViewById(R.id.skipText2)
+        skipTextView.setOnClickListener {
+            val intent = Intent(requireContext(), LoginPage::class.java)
+            startActivity(intent)
         }
 
 
