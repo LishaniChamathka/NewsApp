@@ -16,13 +16,17 @@ class TodayNewsAdapter(
 
     inner class TodayNewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgTodayNews: ImageView = itemView.findViewById(R.id.imgTodayNews)
-        val tvTodayTitle: TextView = itemView.findViewById(R.id.tvTodayTitle)
-        val tvTodayCategory: TextView = itemView.findViewById(R.id.tvTodayCategory)
+        val tvTodayTitle: TextView = itemView.findViewById(R.id.newsTitle)
+        val tvTodayCategory: TextView = itemView.findViewById(R.id.categoryText)
+        val tvTimeText: TextView = itemView.findViewById(R.id.timeText)
+        val tvSourceText: TextView = itemView.findViewById(R.id.sourceText)
 
         fun bind(news: NewsItem) {
             imgTodayNews.setImageResource(news.imageRes)
             tvTodayTitle.text = news.title
             tvTodayCategory.text = news.category
+            tvTimeText.text = news.time
+            tvSourceText.text = news.source
 
             itemView.setOnClickListener {
                 onItemClick(news) // Handle click event

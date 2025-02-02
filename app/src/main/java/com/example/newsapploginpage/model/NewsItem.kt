@@ -4,5 +4,7 @@ data class NewsItem(
     val title: String,
     val category: String,
     val imageRes: Int,
-    val detail: String
+    val detail: String,
+    val source: String,
+    val time:String
 )

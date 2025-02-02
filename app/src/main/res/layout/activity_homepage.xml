@@ -58,20 +58,20 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
 
+    <!-- Horizontal RecyclerView -->
     <TextView
         android:id="@+id/tvViewAllBreakingNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"
         android:text="view all"
         android:textColor="#3A3468"
-        android:textSize="16dp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvBreakingNews" />
 
-    <!-- Horizontal RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerBreakingNews"
         android:layout_width="match_parent"
@@ -103,12 +103,12 @@
         android:id="@+id/tvViewAllTodayNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:focusable="true"
         android:text="view all"
         android:textColor="#3A3468"
-        android:textSize="16dp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/tvTodayNews" />
 
