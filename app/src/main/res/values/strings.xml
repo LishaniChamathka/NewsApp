@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
+
+    <string-array name="dropdown_items">
+        <item>Sports</item>
+        <item>Politics</item>
+        <item>Education</item>
+        <item>Agriculture</item>
+    </string-array>
 </resources>

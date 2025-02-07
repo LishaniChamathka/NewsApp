@@ -10,7 +10,7 @@ import com.example.newsapploginpage.model.NewsItem
 import com.example.newsapploginpage.R
 
 class TodayNewsAdapter(
-    private val newsList: List<NewsItem>,
+    private var newsList: List<NewsItem> = listOf(),
     private val onItemClick: (NewsItem) -> Unit
 ) : RecyclerView.Adapter<TodayNewsAdapter.TodayNewsViewHolder>() {
 
@@ -29,9 +29,14 @@ class TodayNewsAdapter(
             tvSourceText.text = news.source
 
             itemView.setOnClickListener {
-                onItemClick(news) // Handle click event
+                onItemClick(news)
             }
         }
+    }
+
+    fun updateList(newList: List<NewsItem>) {
+        newsList = newList
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodayNewsViewHolder {

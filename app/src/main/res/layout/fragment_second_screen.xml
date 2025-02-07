@@ -34,7 +34,7 @@
         android:text="Breaking
                       Barriers with
                       your language"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="380dp"
         android:padding="40dp"
         android:textSize="30sp"
         android:textColor="@color/white"
