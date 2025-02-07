@@ -72,8 +72,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Title"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:paddingTop="16dp" />
+                android:paddingTop="20dp" />
 
             <EditText
                 android:id="@+id/titleInput"
@@ -82,6 +83,7 @@
                 android:background="@android:color/transparent"
                 android:hint="Enter title"
                 android:padding="8dp"
+                android:layout_marginTop="10dp"
                 android:inputType="text" />
 
             <View
@@ -94,8 +96,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="News Type"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                android:paddingTop="16dp" />
+                android:paddingTop="20dp" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -115,7 +118,8 @@
                 android:layout_height="wrap_content"
                 android:text="Content"
                 android:textStyle="bold"
-                android:paddingTop="16dp" />
+                android:textSize="16sp"
+                android:paddingTop="20dp" />
 
             <EditText
                 android:id="@+id/contentInput"
@@ -125,6 +129,7 @@
                 android:hint="Enter content"
                 android:padding="8dp"
                 android:gravity="top"
+                android:layout_marginTop="10dp"
                 android:inputType="textMultiLine" />
 
             <!-- Rich Text Toolbar -->
