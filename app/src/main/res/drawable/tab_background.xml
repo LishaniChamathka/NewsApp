@@ -1,0 +1,19 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected tab background -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#19134B"/>
+            <corners android:bottomLeftRadius="40dp"
+                android:bottomRightRadius="40dp"/>
+        </shape>
+    </item>
+
+    <!-- Default tab background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/>
+            <corners android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp"/>
+        </shape>
+    </item>
+</selector>
