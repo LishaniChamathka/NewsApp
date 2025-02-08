@@ -50,6 +50,9 @@
             android:name="com.example.newsapploginpage.CreateActivity"
             android:exported="false" />
         <activity android:name=".UserArticleActivity" />
+        <activity
+            android:name=".ExploreActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

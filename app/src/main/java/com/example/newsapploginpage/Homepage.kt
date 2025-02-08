@@ -175,9 +175,9 @@ class Homepage : AppCompatActivity() {
                         finish()
                     }
                     R.id.nav_explore -> {
-//                        startActivity(Intent(this, ExploreActivity::class.java))
-//                        overridePendingTransition(0, 0)
-//                        finish()
+                       startActivity(Intent(this, ExploreActivity::class.java))
+                        overridePendingTransition(0, 0)
+                        finish()
                     }
                     R.id.nav_bookmarks -> {
 //                        startActivity(Intent(this, BookmarksActivity::class.java))

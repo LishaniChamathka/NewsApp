@@ -65,4 +65,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.5.0")
 
     implementation("com.google.android.material:material:1.x.x")
+
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
 }
