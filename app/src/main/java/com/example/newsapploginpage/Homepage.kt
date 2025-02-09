@@ -140,31 +140,6 @@ class Homepage : AppCompatActivity() {
         todayNewsAdapter.updateList(filteredTodayNews)
     }
 
-//    private fun setupBottomNavigation() {
-//        binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
-//            when (menuItem.itemId) {
-////                R.id.nav_home -> {
-////                    // Handle home navigation
-////                    true
-////                }
-////                R.id.nav_explore -> {
-////                    // Handle explore navigation
-////                    true
-////                }
-////                R.id.nav_bookmarks -> {
-////                    // Handle bookmarks navigation
-////                    true
-////                }
-//                R.id.nav_profile -> {
-//                    // Navigate to Profile Activity
-//                    startActivity(Intent(this, ProfileActivity::class.java))
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
-//    }
-
     private fun setupBottomNavigation() {
         binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
             if (menuItem.itemId != binding.bottomNavigationView.selectedItemId) {

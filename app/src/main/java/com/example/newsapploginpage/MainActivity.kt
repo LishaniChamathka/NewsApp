@@ -1,7 +1,10 @@
 package com.example.newsapploginpage
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils.replace
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -15,52 +18,33 @@ import androidx.fragment.app.commit
 import com.example.newsapploginpage.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_main)
-//
-//        loadFragment(OnboardingFragment())
-//
-//        // Load the onboarding fragment
-////        if (savedInstanceState == null) {
-////            supportFragmentManager.beginTransaction()
-////                .replace(R.id.fragmentContainer, OnboardingFragment())
-////                .commit()
-////        }
-//
-//
-//        // Load OnboardingFragment inside the container
-//        private fun loadFragment(fragment: Fragment) {
-//            supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainer, fragment)
-//                .commit()
-//        }
-
-
-
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
-            // Load OnboardingFragment
-//            loadFragment(OnboardingFragment())
 
+//            if (savedInstanceState == null) {
+//                supportFragmentManager.commit {
+//                    replace(R.id.fragmentContainer, OnboardingFragment())
+//                }
+//            }
 
-            if (savedInstanceState == null) {
-                supportFragmentManager.commit {
-                    replace(R.id.fragmentContainer, OnboardingFragment())
-                }
-            }
-        }
+//            Handler(Looper.getMainLooper()).post {
+//                supportFragmentManager.beginTransaction()
+//                    .replace(R.id.fragmentContainer, OnboardingFragment())
+//                    .commit()
+//            }
 
-//        private fun loadFragment(fragment: Fragment) {
+//            supportFragmentManager.executePendingTransactions()
 //            supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainer, fragment)
+//                .replace(R.id.fragmentContainer, OnboardingFragment())
 //                .commit()
-//        }
 
+            Log.d("FragmentTransaction", "Before committing fragment")
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, OnboardingFragment())
+                .commit()
+            Log.d("FragmentTransaction", "After committing fragment")
 
-
-
+        }
 }

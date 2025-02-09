@@ -31,8 +31,10 @@ class OnboardingFragment : Fragment() {
 
         val adapter = ViewPagerAdapter(
             fragmentList,
-            requireActivity().supportFragmentManager,
-            lifecycle
+//            requireActivity().supportFragmentManager,
+//            lifecycle
+            childFragmentManager, // ✅ Use childFragmentManager to avoid conflicts
+            viewLifecycleOwner.lifecycle
         )
 
         val viewPager = view.findViewById<ViewPager2>(R.id.view_pager)

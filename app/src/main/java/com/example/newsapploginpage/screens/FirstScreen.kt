@@ -33,6 +33,7 @@ class FirstScreen : Fragment() {
         skipTextView.setOnClickListener {
             val intent = Intent(requireContext(), LoginPage::class.java)
             startActivity(intent)
+            requireActivity().finish() // ✅ Prevents fragment transaction issues
         }
 
         return view

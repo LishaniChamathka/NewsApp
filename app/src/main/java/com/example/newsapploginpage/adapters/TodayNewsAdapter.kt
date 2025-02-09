@@ -1,5 +1,6 @@
 package com.example.newsapploginpage.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,7 @@ class TodayNewsAdapter(
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun updateList(newList: List<NewsItem>) {
         newsList = newList
         notifyDataSetChanged()

@@ -53,6 +53,10 @@
         <activity
             android:name=".ExploreActivity"
             android:exported="false" />
+        <activity android:name=".ArticleDetailActivity"
+            android:exported="false"/>
+        <activity android:name=".AdminHomePage"
+            android:exported="false"/>
     </application>
 
 </manifest>
