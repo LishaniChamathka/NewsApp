@@ -7,6 +7,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.newsapploginpage.AcceptFragment
 import com.example.newsapploginpage.RejectFragment
 
+
+//Positioning reject and accept fragment - admin
 class AdminFragmentAdapter (
     fragmentManager: FragmentManager,
     lifecycle: Lifecycle

@@ -23,7 +23,6 @@ class ArticleAdapter(
 ) : RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
     class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//        val imgTodayNews: ImageView
         val articleImage: ImageView = view.findViewById(R.id.adminArticleImage)
         val articleTitle: TextView = view.findViewById(R.id.adminArticleTitle)
         val articleDescription: TextView = view.findViewById(R.id.adminArticleDescription)
@@ -46,8 +45,8 @@ class ArticleAdapter(
 
         // Load image safely using Glide
         Glide.with(context)
-            .load(article.imageUrl) // Ensure it's a valid URL
-            .placeholder(R.drawable.sport) // Add placeholder
+            .load(article.imageUrl)
+            .placeholder(R.drawable.sport)
             .into(holder.articleImage)
 
 

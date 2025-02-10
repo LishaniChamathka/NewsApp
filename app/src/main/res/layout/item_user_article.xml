@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- Article Image -->
+        <ImageView
+            android:id="@+id/articleUserFragmentImage"
+            android:layout_width="100dp"
+            android:layout_height="95dp"
+            android:contentDescription="Article Thumbnail"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sport" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="12dp">
+
+            <!-- Category & Time Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <!-- Article Category -->
+                <TextView
+                    android:id="@+id/articleUserFragmentCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Educational"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <!-- Spacer -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <!-- Article Time -->
+                <TextView
+                    android:id="@+id/articleUserFragmentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 Hours ago"
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <!-- Article Title -->
+            <TextView
+                android:id="@+id/articleUserFragmentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grad 5 scholarship exam results released"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <!-- Article Source -->
+            <TextView
+                android:id="@+id/articleUserFragmentSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ada Derana"
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

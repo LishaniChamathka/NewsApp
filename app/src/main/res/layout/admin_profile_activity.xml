@@ -57,7 +57,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:contentDescription="Verified"
-                    android:src="@drawable/ic_verified" />
+                    android:src="@drawable/ic_admin_profile" />
             </LinearLayout>
         </LinearLayout>
 
@@ -67,32 +67,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@drawable/ic_add_news"/>
-
-                <TextView
-                    android:id="@+id/addNews"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add news"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:padding="5dp"
-                    android:layout_marginStart="10dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_marginTop="20dp"
@@ -278,7 +252,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_profile_back"
+                android:id="@+id/btn_admin_profile_back"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

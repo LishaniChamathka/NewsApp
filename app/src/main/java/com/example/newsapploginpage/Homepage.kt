@@ -4,16 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapploginpage.adapters.BreakingNewsAdapter
 import com.example.newsapploginpage.adapters.TodayNewsAdapter
 import com.example.newsapploginpage.databinding.ActivityHomepageBinding
-import com.example.newsapploginpage.databinding.ActivityMainBinding
 import com.example.newsapploginpage.model.NewsItem
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Homepage : AppCompatActivity() {
     private lateinit var binding: ActivityHomepageBinding

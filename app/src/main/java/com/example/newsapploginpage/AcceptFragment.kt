@@ -1,5 +1,6 @@
 package com.example.newsapploginpage
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,41 +11,38 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapploginpage.adapters.AdminFragmentArticleAdapter
 import com.example.newsapploginpage.model.AdminArticles
 
-class AcceptFragment : Fragment() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var articleAdapter: AdminFragmentArticleAdapter
 
+class AcceptFragment : Fragment() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_accept, container, false)
-    }
+        val view =  inflater.inflate(R.layout.fragment_accept, container, false)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        recyclerView = view.findViewById(R.id.recyclerViewAccept)
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewAccept)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val acceptedArticles = listOf(
+        val articlesList = listOf(
             AdminArticles(
-                title = "Grade 5 Results Out",
-                category = "Educational",
-                timeAgo = "2 Hours ago",
-                source = "Ada Derana",
-                imageUrl = "android.resource://${requireContext().packageName}/${R.drawable.today1}"
+                adminTitle = "Grad 5 scholarship exam results released",
+                adminSource = "Ada Derana",
+                adminTime = "2 Hours ago",
+                adminCategory = "Educational",
+                adminImageUrl = R.drawable.sport
             ),
             AdminArticles(
-                title = "Tech Innovations 2025",
-                category = "Technology",
-                timeAgo = "5 Hours ago",
-                source = "TechCrunch",
-                imageUrl = "android.resource://${requireContext().packageName}/${R.drawable.today1}"
+                adminTitle = "Tech Innovations 2025",
+                adminSource = "TechCrunch",
+                adminTime = "5 Hours ago",
+                adminCategory = "Technology",
+                adminImageUrl = R.drawable.sport
             )
         )
 
-        articleAdapter = AdminFragmentArticleAdapter(acceptedArticles)
-        recyclerView.adapter = articleAdapter
+        recyclerView.adapter = AdminFragmentArticleAdapter(articlesList)
+
+        return view
+
     }
 }

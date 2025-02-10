@@ -21,11 +21,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsapploginpage.model.Article
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class AdminHomePage : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var articleList: List<Article>
+
+    private lateinit var bottomNavigationView: BottomNavigationView
 
     @SuppressLint("MissingInflatedId", "NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +37,30 @@ class AdminHomePage : AppCompatActivity() {
 
         //navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        bottomNavigationView = findViewById(R.id.adminBottomNav)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.adminHome -> {
+                    // Stay in the same activity (AdminHomePage)
+                    true
+                }
+                R.id.adminArticles -> {
+                    startActivity(Intent(this, AdminArticleActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+                R.id.adminProfile -> {
+                    startActivity(Intent(this, AdminProfile::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
 
         // Sample article data
         articleList = listOf(
@@ -72,28 +99,10 @@ class AdminHomePage : AppCompatActivity() {
         return true
     }
 
+
+
     // Handle menu item selection
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.adminHome -> {
-                // Stay in the same activity (AdminHomePage)
-                return true
-            }
-            R.id.adminArticles -> {
-                startActivity(Intent(this, AdminArticleActivity::class.java))
-                overridePendingTransition(0, 0)
-                finish()
-                return true
-            }
-//            R.id.adminProfile -> {
-//                startActivity(Intent(this, AdminProfileActivity::class.java))
-//                overridePendingTransition(0, 0)
-//                finish()
-//                return true
-//            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+
 
 
 
