@@ -1,4 +1,4 @@
-package com.example.newsapploginpage
+package com.example.newsapploginpage.model
 
 data class News(
     val title: String,

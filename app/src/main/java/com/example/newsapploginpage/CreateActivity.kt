@@ -160,6 +160,7 @@ class CreateActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("InflateParams")
     private fun showCenteredDialog() {
         val dialog = Dialog(this)
         val view = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_submit, null)

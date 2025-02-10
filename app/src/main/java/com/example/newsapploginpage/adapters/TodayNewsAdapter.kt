@@ -16,11 +16,11 @@ class TodayNewsAdapter(
 ) : RecyclerView.Adapter<TodayNewsAdapter.TodayNewsViewHolder>() {
 
     inner class TodayNewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgTodayNews: ImageView = itemView.findViewById(R.id.imgTodayNews)
-        val tvTodayTitle: TextView = itemView.findViewById(R.id.newsTitle)
-        val tvTodayCategory: TextView = itemView.findViewById(R.id.categoryText)
-        val tvTimeText: TextView = itemView.findViewById(R.id.timeText)
-        val tvSourceText: TextView = itemView.findViewById(R.id.sourceText)
+        private val imgTodayNews: ImageView = itemView.findViewById(R.id.imgTodayNews)
+        private val tvTodayTitle: TextView = itemView.findViewById(R.id.newsTitle)
+        private val tvTodayCategory: TextView = itemView.findViewById(R.id.categoryText)
+        private val tvTimeText: TextView = itemView.findViewById(R.id.timeText)
+        private val tvSourceText: TextView = itemView.findViewById(R.id.sourceText)
 
         fun bind(news: NewsItem) {
             imgTodayNews.setImageResource(news.imageRes)

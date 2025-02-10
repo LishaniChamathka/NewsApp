@@ -57,6 +57,8 @@
             android:exported="false"/>
         <activity android:name=".AdminHomePage"
             android:exported="false"/>
+        <activity android:name=".AdminArticleActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
