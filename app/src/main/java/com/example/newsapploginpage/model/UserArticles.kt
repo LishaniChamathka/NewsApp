@@ -5,5 +5,5 @@ data class UserArticles(
     val userSource: String,
     val userTime: String,
     val userCategory: String,
-    val userImageUrl: Int
+    val userImageUrl: String
 )

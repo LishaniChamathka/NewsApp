@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.newsapploginpage.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
-class SubmitBottomSheetActivity : AppCompatActivity() {
+class SubmitBottomSheetActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -22,11 +22,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsapploginpage.model.Article
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 
-class AdminHomePage : AppCompatActivity() {
+class AdminHomePage : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var articleList: List<Article>
+    private val db = FirebaseFirestore.getInstance()
+
+
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
@@ -37,6 +41,7 @@ class AdminHomePage : AppCompatActivity() {
 
         //navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         bottomNavigationView = findViewById(R.id.adminBottomNav)
 
@@ -62,32 +67,6 @@ class AdminHomePage : AppCompatActivity() {
             }
         }
 
-        // Sample article data
-        articleList = listOf(
-            Article(
-                "T20 World Cup Win",
-                "Lorem ipsum dolor sit amet",
-                R.drawable.sport.toString(),
-                "Bloomberg",
-                "android.resource://${this.packageName}/${R.drawable.today1}"
-            ),
-            Article(
-                "Another Article",
-                "Another description",
-                R.drawable.sport.toString(),
-                "Bloomberg",
-                "android.resource://${this.packageName}/${R.drawable.today1}"
-            ),
-            Article(
-                "Tech Innovations",
-                "Future of AI in 2025",
-                R.drawable.sport.toString(),
-                "Bloomberg",
-                "android.resource://${this.packageName}/${R.drawable.today1}"
-            )
-        )
-
-        // RecyclerView setup
         recyclerView = findViewById(R.id.adminArticlesRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = AdminArticlesAdapter(articleList)

@@ -34,8 +34,17 @@ class UserArticleFragmentAdapter(private val articlesList: List<UserArticles>) :
         holder.sourceTextView.text = article.userSource
         holder.timeTextView.text = article.userTime
         holder.categoryTextView.text = article.userCategory
-        holder.imageView.setImageResource(article.userImageUrl)
+
+        Glide.with(holder.itemView.context)
+            .load(article.userImageUrl)
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
+            .into(holder.imageView)
     }
 
     override fun getItemCount() = articlesList.size
+}
+
+private fun ImageView.setImageResource(userImageUrl: String) {
+
 }

@@ -29,14 +29,14 @@ class RejectFragment : Fragment() {
                 adminSource = "Ada Derana",
                 adminTime = "2 Hours ago",
                 adminCategory = "Educational",
-                adminImageUrl = R.drawable.sport
+                adminImageUrl = R.drawable.sport.toString()
             ),
             AdminArticles(
                 adminTitle = "Tech Innovations 2025",
                 adminSource = "TechCrunch",
                 adminTime = "5 Hours ago",
                 adminCategory = "Technology",
-                adminImageUrl = R.drawable.sport
+                adminImageUrl = R.drawable.sport.toString()
             )
         )
 

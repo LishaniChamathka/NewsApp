@@ -21,16 +21,32 @@ import android.view.Window
 import android.widget.*
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
-class CreateActivity : AppCompatActivity() {
+class CreateActivity : BaseActivity() {
     private val PICK_IMAGE_REQUEST = 1
     private var selectedImageUri: Uri? = null
+
+    private lateinit var db: FirebaseFirestore
 
     private lateinit var contentEditText: EditText
     private val undoManager = UndoManager()
 
     private var selectionStart = 0
     private var selectionEnd = 0
+
+    data class Article(
+        val title: String,
+        val content: String,
+        val imageUrl: String,
+        val category: String,
+        val author: String = FirebaseAuth.getInstance().currentUser?.email ?: "",
+        val status: String = "pending",
+        val date: String = System.currentTimeMillis().toString()
+    )
 
     // Declare UI elements
     private lateinit var imageUploadFrame: FrameLayout
@@ -70,6 +86,8 @@ class CreateActivity : AppCompatActivity() {
                 }
             }
         })
+
+        db = FirebaseFirestore.getInstance()
 
         contentEditText.setOnClickListener {
             updateSelectionPositions()
@@ -118,7 +136,23 @@ class CreateActivity : AppCompatActivity() {
         cancelBtn.setOnClickListener { finish() }
 
         submitBtn.setOnClickListener {
-            showCenteredDialog()
+            val title = titleInput.text.toString()
+            val content = contentInput.text.toString()
+            val category = spinner.selectedItem.toString()
+
+            if (title.isEmpty() || content.isEmpty()) {
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (selectedImageUri == null) {
+                Toast.makeText(this, "Please upload an image", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            Article(title, content, selectedImageUri.toString(), category).also {
+                uploadArticleToFirestore(it)
+            }
         }
 
         // Rich text formatting buttons
@@ -312,5 +346,19 @@ class CreateActivity : AppCompatActivity() {
 
         dialog.show()
     }
+
+    private fun uploadArticleToFirestore(article: Article) {
+        db.collection("articles")
+            .add(article)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Article uploaded successfully!", Toast.LENGTH_SHORT).show()
+                showSuccessDialog()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to upload article: ${e.message}", Toast.LENGTH_SHORT)
+                    .show()
+            }
+    }
+
 }
 

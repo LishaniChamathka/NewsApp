@@ -70,7 +70,7 @@
             android:gravity="center">
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/login_email"
                 android:layout_width="300dp"
                 android:layout_height="54dp"
                 android:background="@color/white"
@@ -89,7 +89,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/login_password"
                 android:layout_width="300dp"
                 android:layout_height="54dp"
                 android:layout_marginTop="16dp"

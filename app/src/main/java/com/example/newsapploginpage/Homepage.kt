@@ -10,8 +10,9 @@ import com.example.newsapploginpage.adapters.BreakingNewsAdapter
 import com.example.newsapploginpage.adapters.TodayNewsAdapter
 import com.example.newsapploginpage.databinding.ActivityHomepageBinding
 import com.example.newsapploginpage.model.NewsItem
+import com.google.firebase.auth.FirebaseAuth
 
-class Homepage : AppCompatActivity() {
+class Homepage : BaseActivity() {
     private lateinit var binding: ActivityHomepageBinding
 
     private lateinit var breakingNewsAdapter: BreakingNewsAdapter
@@ -157,6 +158,10 @@ class Homepage : AppCompatActivity() {
                     }
                     R.id.nav_profile -> {
                         startActivity(Intent(this, ProfileActivity::class.java))
+                        //pass user
+                        val user = FirebaseAuth.getInstance().currentUser
+                        val intent = Intent(this, ProfileActivity::class.java)
+                        startActivity(intent)
                         overridePendingTransition(0, 0)
                         finish()
                     }

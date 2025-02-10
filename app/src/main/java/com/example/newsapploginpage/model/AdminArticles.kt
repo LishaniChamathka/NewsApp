@@ -5,6 +5,7 @@ data class AdminArticles(
     val adminSource: String,
     val adminTime: String,
     val adminCategory: String,
-    val adminImageUrl: Int
+    val adminImageUrl: String
+
 )
 

@@ -12,7 +12,7 @@ import com.example.newsapploginpage.model.Recommendation
 import com.example.newsapploginpage.model.Topic
 import com.example.newsapploginpage.databinding.ActivityExploreBinding
 
-class ExploreActivity : AppCompatActivity() {
+class ExploreActivity : BaseActivity() {
 
     private lateinit var binding: ActivityExploreBinding
     private lateinit var topicAdapter: TopicAdapter

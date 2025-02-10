@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.newsapploginpage.adapters.FragmentPageAdapter
 import com.google.android.material.tabs.TabLayout
 
-class UserArticleActivity : AppCompatActivity() {
+class UserArticleActivity : BaseActivity() {
 
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2

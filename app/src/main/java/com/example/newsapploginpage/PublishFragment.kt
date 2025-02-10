@@ -42,14 +42,14 @@ class PublishFragment : Fragment() {
                 userSource = "Ada Derana",
                 userTime = "2 Hours ago",
                 userCategory = "Educational",
-                userImageUrl = drawable.sport
+                userImageUrl = drawable.sport.toString()
             ),
             UserArticles(
                 userTitle = "Tech Innovations 2025",
                 userSource = "TechCrunch",
                 userTime = "5 Hours ago",
                 userCategory = "Technology",
-                userImageUrl = drawable.sport
+                userImageUrl = drawable.sport.toString()
             )
         )
 
