@@ -70,12 +70,22 @@ class AcceptFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 articlesList.clear()
                 for (document in documents) {
+                    val fullContent = document.getString("content") ?: ""
+                    val shortContent = if (fullContent.length > 24) {
+                        fullContent.take(24) + "..."
+                    } else {
+                        fullContent
+                    }
                     val article = AdminArticles(
+                        adminId = document.id,
                         adminTitle = document.getString("title")!!,
                         adminSource = document.getString("author")!!,
                         adminTime = changetimeToAgo(document.getString("date")!!),
                         adminCategory = document.getString("category")!!,
-                        adminImageUrl = document.getString("imageUrl")!!
+                        adminImageUrl = document.getString("imageUrl")!!,
+                        adminContent = shortContent,
+                        fullContent = fullContent
+
                     )
                     articlesList.add(article)
                 }

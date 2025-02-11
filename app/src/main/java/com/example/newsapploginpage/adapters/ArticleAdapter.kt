@@ -43,10 +43,10 @@ class ArticleAdapter(
         holder.articleTitle.text = article.title
         holder.articleDescription.text = article.description
 
-        // Load image safely using Glide
-        Glide.with(context)
+        Glide.with(holder.itemView.context)
             .load(article.imageUrl)
-            .placeholder(R.drawable.sport)
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
             .into(holder.articleImage)
 
 

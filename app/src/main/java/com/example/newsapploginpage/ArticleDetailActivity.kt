@@ -22,13 +22,17 @@ class ArticleDetailActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_article_detail_layout)
 
-        val articleTitle = intent.getStringExtra("article_title") ?: "No Title"
-        val articleDescription = intent.getStringExtra("article_description") ?: "No Description"
-        val articleImage = intent.getStringExtra("article_image") // Could be a URL or resource ID
+        val articleTitle = intent.getStringExtra("title") ?: "No Title"
+        val articleDescription = intent.getStringExtra("description") ?: "No Description"
+        val articleImage = intent.getStringExtra("image") // Could be a URL or resource
+        val timeAgo = intent.getStringExtra("timeAgo") ?: "No Time"
+        val author = intent.getStringExtra("author") ?: "No Author"
 
         val titleTextView: TextView = findViewById(R.id.articleTitle)
         val descTextView: TextView = findViewById(R.id.articleContent)
         val imageView: ImageView = findViewById(R.id.articleImage)
+        val authorView: TextView = findViewById(R.id.authorName)
+        val timeTextView: TextView = findViewById(R.id.timeAgo)
 
         val backToAdminHome: ImageView = findViewById(R.id.admin_back_btn)
         backToAdminHome.setOnClickListener {
@@ -41,22 +45,12 @@ class ArticleDetailActivity : BaseActivity() {
 
         titleTextView.text = articleTitle
         descTextView.text = articleDescription
+        authorView.text = author
+        timeTextView.text = timeAgo
 
-        // Load image based on URL or resource ID
-        if (!articleImage.isNullOrEmpty()) {
-            if (articleImage.startsWith("http")) {
-                Glide.with(this)
-                    .load(articleImage)
-                    .placeholder(R.drawable.sport) // Placeholder while loading
-                    .error(R.drawable.error_image) // Show on error
-                    .into(imageView)
-            } else {
-                val imageResId = articleImage.toIntOrNull()
-                imageView.setImageResource(imageResId ?: R.drawable.sport)
-            }
-        } else {
-            imageView.setImageResource(R.drawable.sport)
-        }
+        Glide.with(this)
+
+
 
         detailAcceptButton.setOnClickListener {
             showAcceptPopup()

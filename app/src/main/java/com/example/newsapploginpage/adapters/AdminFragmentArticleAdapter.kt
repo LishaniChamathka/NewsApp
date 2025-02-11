@@ -14,7 +14,6 @@ import com.example.newsapploginpage.model.AdminArticles
 class AdminFragmentArticleAdapter(private val articles: List<AdminArticles>) :
     RecyclerView.Adapter<AdminFragmentArticleAdapter.ArticleViewHolder>() {
 
-    // ViewHolder class to hold the views for each item in the RecyclerView
     class ArticleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val articleImage: ImageView = view.findViewById(R.id.articleAdminFragmentImage)
         val articleTitle: TextView = view.findViewById(R.id.articleAdminFragmentTitle)
@@ -23,13 +22,11 @@ class AdminFragmentArticleAdapter(private val articles: List<AdminArticles>) :
         val articleCategory: TextView = view.findViewById(R.id.articleAdminFragmentCategory)
     }
 
-    // Inflates the item layout and creates a ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
         return ArticleViewHolder(view)
     }
 
-    // Binds the data to the views in each item of the RecyclerView
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = articles[position]
         holder.articleCategory.text = article.adminCategory
@@ -37,10 +34,10 @@ class AdminFragmentArticleAdapter(private val articles: List<AdminArticles>) :
         holder.articleTitle.text = article.adminTitle
         holder.articleSource.text = article.adminSource
 
-        // Load image using Glide
         Glide.with(holder.itemView.context)
             .load(article.adminImageUrl)
-            .placeholder(R.drawable.sport)
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_launcher_background)
             .into(holder.articleImage)
     }
 

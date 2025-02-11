@@ -15,6 +15,7 @@ import android.text.SpannableStringBuilder
 import android.text.TextWatcher
 import android.text.style.StyleSpan
 import android.text.style.URLSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
@@ -149,6 +150,8 @@ class CreateActivity : BaseActivity() {
                 Toast.makeText(this, "Please upload an image", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            Log.w("CreateActivity", "Selected image URI: $selectedImageUri")
 
             Article(title, content, selectedImageUri.toString(), category).also {
                 uploadArticleToFirestore(it)

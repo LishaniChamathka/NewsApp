@@ -25,18 +25,24 @@ class RejectFragment : Fragment() {
 
         val articlesList = listOf(
             AdminArticles(
+                adminId = "1",
                 adminTitle = "Grad 5 scholarship exam results released",
                 adminSource = "Ada Derana",
                 adminTime = "2 Hours ago",
                 adminCategory = "Educational",
-                adminImageUrl = R.drawable.sport.toString()
+                adminImageUrl = R.drawable.sport.toString(),
+                adminContent = "The results of the Grade 5 Scholarship Examination held in 2021 have been released online, the Department of Examinations said today (October 4).",
+                fullContent = "The results of the Grade 5 Scholarship Examination held in 2021 have been released online, the Department of Examinations said today (October 4)."
             ),
             AdminArticles(
+                adminId = "2",
                 adminTitle = "Tech Innovations 2025",
                 adminSource = "TechCrunch",
                 adminTime = "5 Hours ago",
                 adminCategory = "Technology",
-                adminImageUrl = R.drawable.sport.toString()
+                adminImageUrl = R.drawable.sport.toString(),
+                adminContent = "The future of technology is here. With the rise of AI and Machine Learning, the world is changing rapidly. Stay tuned for more updates.",
+                fullContent = "The future of technology is here. With the rise of AI and Machine Learning, the world is changing rapidly. Stay tuned for more updates."
             )
         )
 
