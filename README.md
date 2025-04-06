@@ -2,13 +2,9 @@
 
 QuickNews is a mobile news reporting application built using Kotlin, designed to streamline the process of collecting and publishing news. The app features a role-based access system where reporters can submit stories and admins can manage approvals for publishing.
 
----
-
 ##  Project Overview
 
 The primary goal of QuickNews is to provide a simple, fast, and efficient way for field reporters to submit news with images, which will then be reviewed and approved by an admin before being published.
-
----
 
 ##  User Roles & Workflow
 
