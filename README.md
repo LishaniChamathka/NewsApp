@@ -23,7 +23,7 @@ The primary goal of QuickNews is to provide a simple, fast, and efficient way fo
   - Access the admin dashboard after login.
   - View all submitted news articles.
   - **Approve or reject** submitted news.
-  - Only **approved** news gets published and marked as "Live"
+  - Only approved news gets published and marked as "Live"
  
 ##  Features
 
@@ -36,10 +36,20 @@ The primary goal of QuickNews is to provide a simple, fast, and efficient way fo
 
 ##  Tech Stack
 
- Language       - Kotlin                       
- Framework      - Android SDK                              
- UI Components  -  XML        
- Backend        - Firebase      
- Database       - Firestore 
- Auth           - Firebase Auth   
- Image Upload   - Firebase Storage 
+ -  **Language**       - Kotlin                       
+ -  **Framework**      - Android SDK                              
+ -  **UI Components**  -  XML        
+ -  **Backend**        - Firebase      
+ -  **Database**       - Firestore 
+ -  **Auth**           - Firebase Auth   
+ -  **Image Upload**   - Firebase Storage 
+
+## Future Improvements
+
+- Push Notifications for approval status
+
+- Offline support and caching
+
+- Editor's comments for submitted news
+
+- Advanced analytics for published stories
