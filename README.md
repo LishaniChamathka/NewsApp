@@ -1,4 +1,4 @@
-#  QuickNews - Mobile News Reporting App (Kotlin)
+#  Daily Reporter - Mobile News Reporting App (Kotlin)
 
 QuickNews is a mobile news reporting application built using Kotlin, designed to streamline the process of collecting and publishing news. The app features a role-based access system where reporters can submit stories and admins can manage approvals for publishing.
 
