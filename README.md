@@ -53,3 +53,6 @@ The primary goal of QuickNews is to provide a simple, fast, and efficient way fo
 - Editor's comments for submitted news
 
 - Advanced analytics for published stories
+
+## Contributors
+@ShehalHerath @LishaniChamathka @NimeshShaminda @LiyathambaraGagamini
